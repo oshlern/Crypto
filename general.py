@@ -18,10 +18,16 @@ def numToArray(num):
 def numToString(num):
     return numArrayToString(numToArray(num))
 
+def increase(char, key):
+    for chars in [string.ascii_lowercase, string.ascii_uppercase]:
+        if char in chars:
+            char = chars[(chars.index(char) + key) % len(chars)]
+            return char
+    return char
 
-# def inputEncrypt():
-#     msg = raw_input("Please enter message: ")
-#     key = int(raw_input("Please enter key: "))
-#     print encrypt(msg, key)
+def inputEncrypt():
+    msg = raw_input("Please enter message: ")
+    key = int(raw_input("Please enter key: "))
+    print encrypt(msg, key)
 
-# inputEncrypt()
+inputEncrypt()

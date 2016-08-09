@@ -1,12 +1,13 @@
-import general
+import general, string
 
 def encrypt(msg,key):
-    cypher = general.stringToNum(msg)
-    print cypher
-    for i in range(len(cypher)):
-        cypher[i] = ((cypher[i] + key - 95) % 26) + 95
-    print cypher
-    return general.numArrayToString(cypher)
+    # if type(key) != int
+    #     if type(key) == float or type(key) == long:
+        # key = int(key)
+    cypher = ''
+    for char in msg:
+        cypher += increase(char, key)
+    return cypher
 
 def decrypt(cypher, key):
     return encypt(cypher, -1 * key)
