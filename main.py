@@ -1,6 +1,37 @@
-import caesar, crackCyphers#, vig
+import caesar, crackCyphers, vigenere
 
 cyphers = ["caesar", "vigenere"]
+
+def encrypt(cypher, msg, key):
+    crypt = ''
+    if cypher == "caesar":
+        crypt = caesar.encrypt(msg, int(key))
+    elif cypher == "vigenere":
+        crypt = vigenere.encrypt(msg, key)
+    else:
+        print 'cypher not found'
+        return 0
+    return crypt
+
+def decrypt(cypher, crypt, key):
+    msg = ''
+    if cypher == "caesar":
+        msg = caesar.decrypt(crypt, int(key))
+    elif cypher == "vigenere":
+        msg = vigenere.decrypt(crypt, key)
+    else:
+        print 'cypher not found'
+        return 0
+    return msg
+
+def crack(cypher, crypt):
+    if cypher == "caesar":
+        crackCyphers.caesarBreak(crypt)
+    elif cypher == "vigenere":
+        crackCyphers.vigenereBreak(crypt)
+    else:
+        print 'cypher not found'
+        return 0
 
 def inputCypher():
     c = raw_input("Please enter cypher: ")
@@ -13,38 +44,24 @@ def inputCypher():
         print "----Cyphers include: caesar, vigenere"
         return inputCypher()
 
-def encrypt(cypher, msg, key):
-    crypt = ''
-    if cypher == "caesar":
-        crypt = caesar.encrypt(msg, int(key))
-    # elif cypher == "vigenere":
-    #     crypt = vig.encrypt(msg, key)
-    else:
-        print 'cypher not found'
-        return 0
-    return crypt
-
 def inputEncrypt():
     cypher = inputCypher()
     msg = raw_input("Please enter message: ")
     key = raw_input("Please enter key: ")
-
     print encrypt(cypher, msg, key)
 
-def crack(cypher, crypt):
-    if cypher == "caesar":
-        crackCyphers.caesarBreak(crypt)
-    # elif cypher == "vigenere":
-    #     print crack.vigenereBreak
-    else:
-        print 'cypher not found'
-        return 0
+def inputDecrypt():
+    cypher = inputCypher()
+    crypt = raw_input("Please enter message: ")
+    key = raw_input("Please enter key: ")
+    print decrypt(cypher, crypt, key)
 
 def inputCrack():
     cypher = inputCypher()
     crypt = raw_input("Please enter crypt: ")
     crack(cypher, crypt)
 
-inputEncrypt()
-inputCrack()
+# inputDecrypt()
+# inputCrack()
 # crack("caesar", "wtip qba WAPMZ pwe'a qb owqvo?")
+print decrypt('vigenere','hfnlp','abc')

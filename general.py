@@ -1,7 +1,7 @@
 import string
 
-def stringToNum(string):
-    return [ord(char) for char in string]
+def stringToNum(chars):
+    return [string.ascii_lowercase.index(char) for char in chars]
 
 def numArrayToString(num):
     string = ''
@@ -26,3 +26,8 @@ def increase(char, key):
             char = chars[(chars.index(char) + key) % len(chars)]
             return char
     return char
+
+def diff(a, b):
+    return (ord(a) - ord(b) + 13) % 26 - 13
+
+# print diff('t', 'a')
