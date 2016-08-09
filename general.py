@@ -1,3 +1,5 @@
+import string
+
 def stringToNum(string):
     return [ord(char) for char in string]
 
@@ -24,10 +26,3 @@ def increase(char, key):
             char = chars[(chars.index(char) + key) % len(chars)]
             return char
     return char
-
-def inputEncrypt():
-    msg = raw_input("Please enter message: ")
-    key = int(raw_input("Please enter key: "))
-    print encrypt(msg, key)
-
-inputEncrypt()

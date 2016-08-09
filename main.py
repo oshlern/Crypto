@@ -1,4 +1,4 @@
-import caesar, crack#, vig
+import caesar, crackCyphers#, vig
 
 cyphers = ["caesar", "vigenere"]
 
@@ -31,19 +31,20 @@ def inputEncrypt():
 
     print encrypt(cypher, msg, key)
 
-def crack(crypt, cypher):
+def crack(cypher, crypt):
     if cypher == "caesar":
-        print crack.caesarBreak()
+        crackCyphers.caesarBreak(crypt)
     # elif cypher == "vigenere":
     #     print crack.vigenereBreak
     else:
         print 'cypher not found'
         return 0
 
-def inputCrack(crypt):
+def inputCrack():
     cypher = inputCypher()
     crypt = raw_input("Please enter crypt: ")
     crack(cypher, crypt)
 
-# inputEncrypt()
+inputEncrypt()
 inputCrack()
+# crack("caesar", "wtip qba WAPMZ pwe'a qb owqvo?")

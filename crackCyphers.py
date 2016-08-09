@@ -1,7 +1,9 @@
 import caesar
 
-def caeserBreak(cypher):
+def caesarBreak(crypt):
     print "\n\n~~~~~~~~~~~~~~~~~~~~BREAKING CAESAR~~~~~~~~~~~~~~~~~~~~~"
     for i in range(26):
-        print caesar.decrypt(cypher, i)
+        print ' '*i, caesar.decrypt(crypt, i), '\n\n'
     return 0
+
+# caeserBreak('BC cn\'m gy C fcey jcttu')
