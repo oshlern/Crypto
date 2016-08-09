@@ -1,12 +1,12 @@
 import general
 
 def encrypt(msg,key):
-    cypher = stringToNum(msg)
+    cypher = general.stringToNum(msg)
     print cypher
     for i in range(len(cypher)):
         cypher[i] = ((cypher[i] + key - 95) % 26) + 95
     print cypher
-    return numArrayToString(cypher)
+    return general.numArrayToString(cypher)
 
 def decrypt(cypher, key):
     return encypt(cypher, -1 * key)
@@ -16,4 +16,4 @@ def inputEncrypt():
     key = int(raw_input("Please enter key: "))
     print encrypt(msg, key)
 
-# inputEncrypt()
+inputEncrypt()
