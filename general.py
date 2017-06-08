@@ -3,6 +3,20 @@ import string
 def stringToNum(chars):
     return [string.ascii_lowercase.index(char) for char in chars]
 
+def numString(nums):
+    return [string.ascii_lowercase[num] for num in nums]
+
+def numstr(key):
+    k = []
+    for num in key:
+        k += [int(num)]
+    return k
+
+# k numToString(numstr('43785018456823945619510017465812947'))
+
+def hexToString(nums):
+    return nums.decode("hex")
+
 def numArrayToString(num):
     string = ''
     for i in num:

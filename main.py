@@ -1,4 +1,4 @@
-import caesar, crackCyphers, vigenere
+import caesar, crackCyphers, vigenere, general
 
 cyphers = ["caesar", "vigenere"]
 
@@ -64,4 +64,14 @@ def inputCrack():
 # inputDecrypt()
 # inputCrack()
 # crack("caesar", "wtip qba WAPMZ pwe'a qb owqvo?")
-print decrypt('vigenere','hfnlp','abc')
+# key = general.numString(general.numstr('43785018456823945619510017465812947'))
+# string = ''
+# for k in key:
+#     string += k
+# print string
+# print decrypt('vigenere','NBIGMTSGZDMHYQTDTITIFDYIRPDCOWMMZOX',string)
+print general.hexToString("49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d").encode("base64")
+
+
+
+
